@@ -8,14 +8,14 @@ namespace PhoneBook
 {
     public class Contact
     {
-        public Contact(string name, int number)
+        public Contact(string name, long number)
         {
             Name = name;
             Number = number;
         }
 
         public string Name { get; set; }
-        public int Number { get; set; }
+        public long Number { get; set; }
 
     }
 }
