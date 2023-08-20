@@ -8,12 +8,14 @@
         {
             Console.WriteLine("Welcome in the PhoneBook! \n Please select what do you want to do.\n");
 
+            PhoneBook phoneBook = new PhoneBook();
+
             // Create options that you want your menu to have
             options = new List<Option>
             {
                 new Option("Wyszukaj kontakt po numerze telefonu", () => WriteTemporaryMessage("Hi")),
                 new Option("Dodaj kontakt", () =>  WriteTemporaryMessage("How Are You")),
-                new Option("Wyświetl wszystkie kontakty", () =>  WriteTemporaryMessage("Today")),
+                new Option("Wyświetl wszystkie kontakty", () =>  phoneBook.AllContacts()),
                 new Option("Wyjście z programu", () => Environment.Exit(0)),
             };
 
@@ -83,7 +85,6 @@
                 {
                     Console.Write(" ");
                 }
-
                 Console.WriteLine(option.Name);
             }
         }

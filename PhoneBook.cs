@@ -21,7 +21,15 @@ namespace PhoneBook
         };
 
 
-
+        public void AllContacts()
+        { 
+            Console.Clear();
+            Console.WriteLine("Poniżej wyświetlono wszystkie kontakty.");
+            foreach ( var contact in contacts )
+            {
+                Console.WriteLine($"Osoba: {contact.Name},\t   numer telefonu: {contact.Number}");
+            }
+        }
         // Wyświetlamy listę osób wraz z numerami telefonu
         //Console.WriteLine("Lista osób:");
         //foreach (var person in contacts)
