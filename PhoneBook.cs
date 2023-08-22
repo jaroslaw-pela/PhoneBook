@@ -31,7 +31,7 @@ namespace PhoneBook
             }
         }
 
-        public void DisplayContacta(long number)
+        public void DisplayContacts(long number)
         {
 
         }
