@@ -31,9 +31,11 @@ namespace PhoneBook
             }
         }
 
-        public void DisplayContacts(long number)
+        public void DisplayContact(long number)
         {
-
+            Console.Clear();
+            var contact = contacts.Where(c => c.Number == number);
+            Console.WriteLine(contact.ToString());
         }
 
     }
