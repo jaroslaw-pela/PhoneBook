@@ -14,6 +14,7 @@
             options = new List<Option>
             {
                 new Option("Wyszukaj kontakt po numerze telefonu", () => WriteTemporaryMessage("Hi")),
+                new Option("Wyszukaj kontakt po numerze telefonu", () => phoneBook.DisplayContact,
                 new Option("Dodaj kontakt", () =>  WriteTemporaryMessage("How Are You")),
                 new Option("Wyświetl wszystkie kontakty", () =>  phoneBook.DisplayAllContacts()),
                 new Option("Wyjście z programu", () => Environment.Exit(0)),
