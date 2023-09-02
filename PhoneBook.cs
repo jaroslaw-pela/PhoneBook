@@ -10,14 +10,13 @@ namespace PhoneBook
     public class PhoneBook
     {
 
-
         public List<Contact> contacts = new List<Contact>
         {
             new Contact ( "John Doe", 1234567890 ),
             new Contact ( "Alice Smith", 9876543210),
             new Contact ( "Michael Johnson", 5551234567 ),
             new Contact ( "Anna Lee", 8885551234 ),
-            new Contact ( "Michael Jordan", 2385551534 ),
+            new Contact ( "Michael Jordan", 23 ),
         };
 
 
@@ -35,6 +34,7 @@ namespace PhoneBook
         {
             Console.Clear();
             var contact = contacts.Where(c => c.Number == number);
+            //Console.WriteLine(contact.ToString());
             Console.WriteLine(contact.ToString());
         }
 
