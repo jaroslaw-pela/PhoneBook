@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -34,8 +35,10 @@ namespace PhoneBook
         {
             Console.Clear();
             var contact = contacts.Where(c => c.Number == number);
-            //Console.WriteLine(contact.ToString());
-            Console.WriteLine(contact.ToString());
+            //var contactAboutNumber = contact.ToList();
+            Console.WriteLine(string.Join(", ", contact));
+            Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+
         }
 
     }
