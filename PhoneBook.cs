@@ -39,6 +39,7 @@ namespace PhoneBook
             Console.WriteLine(string.Join(", ", contact));
             Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
 
+
         }
 
     }
