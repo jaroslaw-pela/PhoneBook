@@ -36,6 +36,7 @@ namespace PhoneBook
             Console.Clear();
             var contact = contacts.Where(c => c.Number == number);
             //var contactAboutNumber = contact.ToList();
+            Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
             Console.WriteLine(string.Join(", ", contact));
             Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
 
