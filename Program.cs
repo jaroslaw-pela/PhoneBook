@@ -15,7 +15,7 @@ namespace PhoneBook
             PhoneBook phoneBook = new PhoneBook();
 
             Console.WriteLine(  "podaj numer telefonu");
-            var numerek = Convert.ToUInt32(Console.ReadLine());
+            var numerek = Console.ReadLine();
             phoneBook.DisplayContact(numerek);
 
             //        // Create options that you want your menu to have

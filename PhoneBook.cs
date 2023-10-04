@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -13,11 +14,11 @@ namespace PhoneBook
 
         public List<Contact> contacts = new List<Contact>
         {
-            new Contact ( "John Doe", 1234567890 ),
-            new Contact ( "Alice Smith", 9876543210),
-            new Contact ( "Michael Johnson", 5551234567 ),
-            new Contact ( "Anna Lee", 8885551234 ),
-            new Contact ( "Michael Jordan", 23 ),
+            new Contact ( "John Doe", "1234567890" ),
+            new Contact ( "Alice Smith", "9876543210"),
+            new Contact ( "Michael Johnson", "5551234567" ),
+            new Contact ( "Anna Lee", "8885551234"),
+            new Contact ( "Michael Jordan", "23" ),
         };
 
 
@@ -31,14 +32,12 @@ namespace PhoneBook
             }
         }
 
-        public void DisplayContact(long number)
+        public void DisplayContact(string number)
         {
             //Console.Clear();
-            var contact = contacts.Where(c => c.Number == number);
-            //var contactAboutNumber = contact.ToList();
-            Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
-            Console.WriteLine(string.Join(", ", contact));
-            Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+            var contact = contacts.FirstOrDefault(c => c.Number == number);
+
+            Console.WriteLine($"Contact name: {contact.Name}\t, contact phone number {contact.Number}");
 
 
         }
