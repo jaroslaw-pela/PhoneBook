@@ -33,7 +33,7 @@ namespace PhoneBook
 
         public void DisplayContact(long number)
         {
-            Console.Clear();
+            //Console.Clear();
             var contact = contacts.Where(c => c.Number == number);
             //var contactAboutNumber = contact.ToList();
             Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXX");
