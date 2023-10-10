@@ -14,7 +14,7 @@ namespace PhoneBook
 
             PhoneBook phoneBook = new PhoneBook();
 
-            Console.WriteLine(  "podaj numer telefonu");
+            Console.WriteLine("please provide contact phone number ");
             var numerek = Console.ReadLine();
             phoneBook.DisplayContact(numerek);
 

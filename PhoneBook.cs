@@ -28,7 +28,7 @@ namespace PhoneBook
             Console.WriteLine("Poniżej wyświetlono wszystkie kontakty.");
             foreach (var contact in contacts)
             {
-                Console.WriteLine($"Osoba: {contact.Name},\t   numer telefonu: {contact.Number}");
+                Console.WriteLine($"Osoba: {contact.Name},\t numer telefonu: {contact.Number}");
             }
         }
 
@@ -37,9 +37,7 @@ namespace PhoneBook
             //Console.Clear();
             var contact = contacts.FirstOrDefault(c => c.Number == number);
 
-            Console.WriteLine($"Contact name: {contact.Name}\t, contact phone number {contact.Number}");
-
-
+            Console.WriteLine($"Contact name:  {contact.Name},\t contact phone number {contact.Number}");
         }
 
     }
