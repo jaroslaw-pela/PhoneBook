@@ -21,6 +21,10 @@ namespace PhoneBook
             new Contact ( "Michael Jordan", "23" ),
         };
 
+        public void AddContact(Contact contact)
+        {
+
+        }
 
         public void DisplayAllContacts()
         {
