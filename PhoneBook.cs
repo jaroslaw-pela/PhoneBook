@@ -23,7 +23,23 @@ namespace PhoneBook
 
         public void AddContact(Contact contact)
         {
+            contacts.Add(contact);
+        }
 
+
+        public void DisplayContact(string number)
+        {
+            //Console.Clear();
+            var contact = contacts.FirstOrDefault(c => c.Number == number);
+
+            if (contact == null)
+            {
+                Console.WriteLine("Contact not fonud");
+            }
+            else
+            {
+            Console.WriteLine($"Contact name:  {contact.Name},\t contact phone number {contact.Number}");
+            }
         }
 
         public void DisplayAllContacts()
@@ -36,12 +52,9 @@ namespace PhoneBook
             }
         }
 
-        public void DisplayContact(string number)
+        public void DisplayMatchingContact(string searchPhrase)
         {
-            //Console.Clear();
-            var contact = contacts.FirstOrDefault(c => c.Number == number);
-
-            Console.WriteLine($"Contact name:  {contact.Name},\t contact phone number {contact.Number}");
+            var matchingContacts = contacts.Where(c => c.Name.Contains(searchPhrase)).ToList();
         }
 
     }
