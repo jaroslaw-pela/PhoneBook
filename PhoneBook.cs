@@ -55,6 +55,10 @@ namespace PhoneBook
         public void DisplayMatchingContact(string searchPhrase)
         {
             var matchingContacts = contacts.Where(c => c.Name.Contains(searchPhrase)).ToList();
+            foreach (var contact in matchingContacts)
+            {
+                Console.WriteLine($"Osoba: {contact.Name},\t numer telefonu: {contact.Number}");
+            }
         }
 
     }
