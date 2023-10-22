@@ -21,11 +21,22 @@ namespace PhoneBook
             new Contact ( "Michael Jordan", "23" ),
         };
 
-        public void AddContact(Contact contact)
+        public void AddContact()
         {
-            contacts.Add(contact);
+            //contacts.Add(newContact);
+            Console.Clear();
+            Console.WriteLine("Podaj imie i nazwisko");
+            string? newName = Console.ReadLine();
+            Console.WriteLine("Podaj numer telefonu");
+            var newNumber = Console.ReadLine();
+            var newContact = new Contact(newName, newNumber);
+            contacts.Add(newContact);
         }
 
+        public void NowaOsoba()
+        {
+
+        }
 
         public void DisplayContact(string number)
         {
