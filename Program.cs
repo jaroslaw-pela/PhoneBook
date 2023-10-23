@@ -24,7 +24,7 @@ namespace PhoneBook
             var options = new List<Option>
                     {
                     new Option("Dodaj nowy kontakt", () => phoneBook.AddContact()),
-                    new Option("Wyszukaj kontakt po numerze telefonu", () => phoneBook.DisplayContact(numerek)),
+                    new Option("Wyszukaj kontakt po numerze telefonu", () => phoneBook.DisplayContact()),
                     new Option("Wyszukaj wszystkie kontakty", () => phoneBook.DisplayAllContacts()),
                     new Option("Wyszukaj kontakt po imieniu lub nazwisku", () => phoneBook.DisplayMatchingContact(numerek)),
                     new Option("Wyjście z programu", () => Environment.Exit(0))

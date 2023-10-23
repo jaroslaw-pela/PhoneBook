@@ -33,14 +33,12 @@ namespace PhoneBook
             contacts.Add(newContact);
         }
 
-        public void NowaOsoba()
-        {
 
-        }
-
-        public void DisplayContact(string number)
+        public void DisplayContact()
         {
-            //Console.Clear();
+            Console.Clear();
+            Console.WriteLine("podaj numer telefonu");
+            var number = Console.ReadLine();
             var contact = contacts.FirstOrDefault(c => c.Number == number);
 
             if (contact == null)
