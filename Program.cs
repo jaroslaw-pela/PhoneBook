@@ -10,45 +10,35 @@ namespace PhoneBook
         //public static List<Option> options;
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome in the PhoneBook! \nPlease select what do you want to do.\n");
-
             PhoneBook phoneBook = new PhoneBook();
 
-            string? contact = null;
-            string? numerek = null;
+            //string? contact = null;
+            //string? numerek = null;
 
 
+            Console.WriteLine("Witaj w książce telefonicznej! \n\nWciśnij dowolny klawisz aby przejść do menu. \nMożesz się po nim poruszać za pomocą strzałek (góra/dół oraz enter aby zatwierdzić wybór).\n");
+            Console.WriteLine(
+                "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n::::::::::::::::::::::::::::.....:::::::::::::::::::::::::::::::::::::\r\n:::::::::::::::::::::......::::^::..::::::::::::::::::::::::::::::::::\r\n::::::::::::::......::::^^~~~~~~~~^::.::::::::::::::::::::::::::::::::\r\n:::::::::....::::^^~~~~~~~~~~~~~~~!~~^::.:::::::::::::::::::::::::::::\r\n:::::..:::^^^~~~~~~~~~~~~~~~~~!!7!~~!!~~^::.::::::::::::::::::::::::::\r\n::::::^~~~~~~~~~~~~~~^^^~~!??Y5PPY?7~!!!!~~^::.:::::::::::::::::::::::\r\n:::::^^~~~~~~~~^^^~~~??55?5P5YYYJY7!!!!!!!!!!~^::.::::::::::::::::::::\r\n:::::^^^^~~~~~~JYY5Y55Y5J?JPJ?YPGP??!!!!!!!!!!!!~^::.:::::::::::::::::\r\n::::::^^^^^~~~!755?7JJ7PJ?5GY?5Y77!!!!!!!!!!!!!!!!!~^:..::::::::::::::\r\n::::::::^:::^~~~~!JGPPP5J?Y?!!!~!~!!!!!!!!!!!!!!!!!!!!~^:..:::::::::::\r\n:::::::::^:::^^~~~~!J?7!~!~~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!~^:..::::::::\r\n:::::::::::^:::^^~~~~~~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!77!~^:..:::::\r\n:::::::::::::^^::^^~~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!77??7!!!!~::::::\r\n:::::::::::::::^:!7~^^~!!!!!!!!!!!!!!!!!!!!!!!!!!777?777!!!!!!!77~::::\r\n::::::::::::::::^^!?7~^~~!!!!!!!!!!!!!!!!!!!!77??77!!!!!!!!!777?7~^^::\r\n:::::::::::::::::::^!J?~^~~!!!!!!!!!!!!!!77??77!!!!!!!!!!77????7!~^^^^\r\n::::::::::::::::::::^^77?~^~~!!!!!!!!77???7!!!!!!!!!!777????777!~^^^^^\r\n::::::::::::::::::::::^^7J?~^~~!!!!!????7!!!!!!!!777?????777!~~~^^^^::\r\n::::::::::::::::::::::::^^7JJ~^~~!!!!7!!!!!!!777????7777!!~~^^^^^^::::\r\n:::::::::::::::::::::::::^^~7!~7~~~!!!!!!!77?????7777!~~~^^^^^::::::::\r\n:::::::::::::::::::::::::::^^^!!!^^~~!777????7777!~~~^^^^^^:::::::::::\r\n:::::::::::::::::::::::::::::^~!~^^^!???77777!!~~^^^^^::::::::::::::::\r\n:::::::::::::::::::::::::::::::^^~~~7?777!!~~^^^^^::::::::::::::::::::\r\n:::::::::::::::::::::::::::::::::^^!7!!~^^^^^:::::::::::::::::::::::::\r\n:::::::::::::::::::::::::::::::::::^^:::::::::::::::::::::::::::::::::\r\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\r\n::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+            Console.ReadKey();
 
 
-            // Create options that you want your menu to have
             var options = new List<Option>
                     {
                     new Option("Dodaj nowy kontakt", () => phoneBook.AddContact()),
                     new Option("Wyszukaj kontakt po numerze telefonu", () => phoneBook.DisplayContact()),
                     new Option("Wyszukaj wszystkie kontakty", () => phoneBook.DisplayAllContacts()),
-                    new Option("Wyszukaj kontakt po imieniu lub nazwisku", () => phoneBook.DisplayMatchingContact(numerek)),
+                    new Option("Wyszukaj kontakt po imieniu lub nazwisku", () => phoneBook.DisplayMatchingContact()),
                     new Option("Wyjście z programu", () => Environment.Exit(0))
                     };
+
+
+            // Create options that you want your menu to have
 
             // Set the default index of the selected item to be the first
             int index = 0;
 
             // Write the menu out
             WriteMenu(options, options[index]);
-
-
-
-            ////dodawanie nowego kontaktu
-            //Console.WriteLine("podaj imie nowego kontaktu");
-            //var imie = Console.ReadLine();
-            //Console.WriteLine("podaj nazwisko nowego kontaktu");
-            //var nazwisko = Console.ReadLine();
-            //var contact = new Contact(imie, nazwisko);
-
-
-            ////wyszukiwanie po numerze
-            //Console.WriteLine("please provide contact phone number ");
-            //var numerek = Console.ReadLine();
 
 
             // Store key info in here
@@ -85,17 +75,6 @@ namespace PhoneBook
 
             Console.ReadKey();
         }
-
-        // Default action of all the options. You can create more methods
-        static void WriteTemporaryMessage(string message)
-        {
-            Console.Clear();
-            Console.WriteLine(message);
-            Thread.Sleep(2000);
-            //WriteMenu(options, options.First());
-        }
-
-
 
         static void WriteMenu(List<Option> options, Option selectedOption)
         {

@@ -23,23 +23,27 @@ namespace PhoneBook
 
         public void AddContact()
         {
-            //contacts.Add(newContact);
             Console.Clear();
             Console.WriteLine("Podaj imie i nazwisko");
             string? newName = Console.ReadLine();
             Console.WriteLine("Podaj numer telefonu");
             var newNumber = Console.ReadLine();
+
             var newContact = new Contact(newName, newNumber);
+
             contacts.Add(newContact);
+
+            Console.WriteLine("\nNaciśnij strzałkę w dół, aby się cofnąć.");
         }
 
 
         public void DisplayContact()
         {
             Console.Clear();
-            Console.WriteLine("podaj numer telefonu");
+            Console.Write("podaj numer telefonu: ");
             var number = Console.ReadLine();
             var contact = contacts.FirstOrDefault(c => c.Number == number);
+            Console.Clear();
 
             if (contact == null)
             {
@@ -47,28 +51,39 @@ namespace PhoneBook
             }
             else
             {
-            Console.WriteLine($"Contact name:  {contact.Name},\t contact phone number {contact.Number}");
+                Console.WriteLine($"\nImie i Nazwisko:  {contact.Name},\t numer telefonu: {contact.Number}");
             }
+            Console.WriteLine("\nNaciśnij strzałkę w dół, aby się cofnąć.");
         }
 
         public void DisplayAllContacts()
         {
             Console.Clear();
             Console.WriteLine("Poniżej wyświetlono wszystkie kontakty.");
+
             foreach (var contact in contacts)
             {
                 Console.WriteLine($"Osoba: {contact.Name},\t numer telefonu: {contact.Number}");
             }
+
+            Console.WriteLine("\nNaciśnij strzałkę w dół, aby się cofnąć.");
         }
 
-        public void DisplayMatchingContact(string searchPhrase)
+
+        public void DisplayMatchingContact()
         {
+            Console.Clear();
+
+            Console.WriteLine("Wskaż imie, nazwisko, lub częściową frazę");
+            var searchPhrase = Console.ReadLine();
+
             var matchingContacts = contacts.Where(c => c.Name.Contains(searchPhrase)).ToList();
+
             foreach (var contact in matchingContacts)
             {
                 Console.WriteLine($"Osoba: {contact.Name},\t numer telefonu: {contact.Number}");
             }
+            Console.WriteLine("\nNaciśnij strzałkę w dół, aby się cofnąć.");
         }
-
     }
 }
